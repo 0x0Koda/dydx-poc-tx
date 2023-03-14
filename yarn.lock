@@ -559,9 +559,9 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@release-it/conventional-changelog@github:release-it/conventional-changelog":
+"@release-it/conventional-changelog@release-it/conventional-changelog":
   version "5.1.1"
-  resolved "https://codeload.github.com/release-it/conventional-changelog/tar.gz/8f43427bd3c7ec08bda3dbebd20f583e21fd3b48"
+  resolved "https://codeload.github.com/release-it/conventional-changelog/tar.gz/ff9f1aae654dc378d5ed4703a2802ef9591e1a96"
   dependencies:
     concat-stream "^2.0.0"
     conventional-changelog "^3.1.25"

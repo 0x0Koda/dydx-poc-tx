@@ -11,7 +11,7 @@ if (!privateKey)
   // instantiate the SDK
 
   const squid = new Squid({
-    baseUrl: "http://localhost:3000", // for testnet use "https://testnet.api.0xsquid.com"
+    baseUrl: "https://squid-2gwsw7ij1-0xsquid.vercel.app", // for testnet use "https://testnet.api.0xsquid.com"
   });
 
   // init the SDK
@@ -20,7 +20,7 @@ if (!privateKey)
 
   // use the RPC provider of the "from" chain
 
-  const chainId = 5; //avalanche
+  const chainId = 43113; //avalanche
   const provider = ethers.getDefaultProvider(
     squid.chains.find((c) => c.chainId === chainId)!.rpc
   );
@@ -30,15 +30,15 @@ if (!privateKey)
   const params = {
     fromChain: chainId,
     fromToken: squid.tokens.find(
-      (t) => t.symbol === "ETH" && t.chainId === chainId
+      (t) => t.symbol === "AVAX" && t.chainId === chainId
     ).address,
-    fromAmount: ethers.utils.parseUnits("0.01", "18").toString(),
+    fromAmount: ethers.utils.parseUnits("0.1", "18").toString(),
     toChain: "axelar-testnet-lisbon-3",
     toToken: "uosmo",
-    toAddress: "axelar1y5mhc7rj552ykll8d2tgnfzln7m9x3sjkgqzn5",
-    slippage: 3.0, // 3.00 = 3% max slippage across the entire route, acceptable value range is 1-99
-    enableForecall: false, // instant execution service, defaults to true
-    quoteOnly: false, // optional, defaults to falses
+    toAddress: "axelar1zqnudqmjrgh9m3ec9yztkrn4ttx7ys64d2ak9f",
+    slippage: 3.0,
+    enableForecall: false,
+    quoteOnly: false,
   };
 
   const { route } = await squid.getRoute(params);
